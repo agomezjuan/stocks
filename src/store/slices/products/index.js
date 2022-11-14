@@ -88,7 +88,7 @@ export const removeProduct = product => async dispatch => {
 // update a product
 export const editProduct = product => async dispatch => {
   try {
-    const response = await axios.put(`http://localhost:5000/products/${product.id}`, product);
+    const response = await axios.put(`http://localhost:5000/products/${product._id}`, product);
     if (response.status === 200) {
       dispatch(updateProduct(product));
     }
