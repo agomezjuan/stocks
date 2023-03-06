@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { editProduct } from "../../store/slices/products";
+import { editProduct } from "../../store/actions/productActions";
 
 const EditProduct = () => {
   const dispatch = useDispatch();
