@@ -31,6 +31,7 @@ export const userSlice = createSlice({
             .addCase(login.rejected, (state, action) => {
                 state.status = "failed";
                 state.error = action.payload;
+                alert(state.error + ": Invalid username or password");
             })
             .addCase(getUser.pending, (state, action) => {
                 state.status = "loading";

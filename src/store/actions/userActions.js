@@ -18,22 +18,11 @@ export const login = createAsyncThunk(
 
             dispatch(getUser(token));
         } catch (error) {
-            return rejectWithValue(error.message);
+            return rejectWithValue(error.response.data.message);
         }
     }
 );
 
-// logout
-// export const logout = () => async dispatch => {
-//     try {
-//         dispatch(logoutPending());
-//         localStorage.removeItem("token");
-//         console.log("logout");
-//         dispatch(logoutSuccess());
-//     } catch (error) {
-//         dispatch(logoutError(error.message));
-//     }
-// }
 
 // login with token
 export const getUser = createAsyncThunk(
@@ -53,7 +42,7 @@ export const getUser = createAsyncThunk(
             }
             return response.data.user;
         } catch (error) {
-            return rejectWithValue(error.message);
+            return rejectWithValue(error);
         }
     }
 )
